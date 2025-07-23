@@ -1,5 +1,4 @@
-using Elasticsearch.Net;
-using Nest;
+
 using ElasticSearchApi.Extension;
 using ElasticSearchApi.Services;
 using ElasticSearchApi.Repo;
@@ -14,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<ProductRepo>();
+builder.Services.AddScoped<ECommerceRepo>();
+
 builder.Services.AddElastic(builder.Configuration);
 var app = builder.Build();
 
