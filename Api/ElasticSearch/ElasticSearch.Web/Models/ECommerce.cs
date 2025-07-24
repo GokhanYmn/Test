@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ElasticSearchApi.Models.ECommerceModel
+namespace ElasticSearch.Web.Models
 {
     public class ECommerce
     {
@@ -14,16 +14,17 @@ namespace ElasticSearchApi.Models.ECommerceModel
         public string CustomerFullName { get; set; } = null!;
         [JsonPropertyName("category")]
         public string[] Category { get; set; } = null!;
+        [JsonPropertyName("customer_gender")]
+        public string Gender { get; set; } = null!;
         [JsonPropertyName("order_id")]
         public int OrderId { get; set; }
         [JsonPropertyName("order_date")]
         public DateTime OrderDate {  get; set; }
-        [JsonPropertyName("products")]
-        public Product[] Products { get; set; }= null!;
+        
         [JsonPropertyName("tax_ful_total_price")]
         public double TaxFulTotalPrice { get; set; }
 
     }
 
-  
+    
 }

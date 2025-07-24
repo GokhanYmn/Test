@@ -26,7 +26,7 @@ namespace ElasticSearchApi.Repo
         public async Task<ImmutableList<Product>> GetAllAsync()
         {
             var result = await _client.SearchAsync<Product>(
-                s => s.Index(indexName).Query(q => q.MatchAll()));
+                s => s.Indices(indexName).Query(q => q.MatchAll()));
 
             foreach(var hit in result.Hits) hit.Source.Id=hit.Id;
 

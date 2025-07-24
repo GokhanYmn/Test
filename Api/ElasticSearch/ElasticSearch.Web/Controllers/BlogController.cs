@@ -24,7 +24,7 @@ namespace ElasticSearch.Web.Controllers
         {
             ViewBag.SearchText = searchText;
 
-            return View(_blogService.SearchAsync(searchText));
+            return View(await _blogService.SearchAsync(searchText));
         }
         public IActionResult Save()
         {
